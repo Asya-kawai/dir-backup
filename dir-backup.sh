@@ -27,7 +27,7 @@ umask 077
 # Show usage.
 usage () {
     echo "Usage:"
-    echo "$cmdname 'source-directory' 'distination-directory' [--dry-run]"
+    echo "$cmdname 'source-directory' 'destination-directory' [--dry-run]"
 }
 
 # Check the command status.
@@ -85,7 +85,7 @@ srcdir=$1
 dstdir=$2
 
 if [ $srcdir = $dstdir ]; then
-    echo "Abort error: source directory is same the distination directory."
+    echo "Abort error: source directory is same the destination directory."
     exit $ARG_ERR
 fi
 
@@ -99,7 +99,7 @@ if [ ! -e $srcdir ]; then
     echo "Abort error: \$srcdir($srcdir) is not found."
     exit $SRC_DIR_NOT_FOUND
 fi
-# Check whether exists distination-directory or not.
+# Check whether exists destination-directory or not.
 if [ ! -d $dstdir ]; then
     echo "Abort error: \$dstdir($dstdir) is not found."
     exit $DST_DIR_NOT_FOUND
@@ -112,7 +112,7 @@ srcname=$(dot2path $srcdir $t_base)
 dstpath=$(dot2path $dstdir $t_dir)
 dstname=$(dot2path $dstdir $t_base)
 
-# Check source and distination directories.
+# Check source and destination directories.
 if [ -z $srcpath ] || [ -z $srcname ]; then
     echo "Local values \$srcpath($srcpath), \$srcpath($srcname) are invalid."
     exit $VAL_ERR  
@@ -127,8 +127,8 @@ if [ $debugmode -eq 1 ]; then
     echo "-----"
     echo "soruce path =" $srcpath
     echo "source basename =" $srcname
-    echo "distination path =" $dstpath
-    echo "distination basename =" $dstname
+    echo "destination path =" $dstpath
+    echo "destination basename =" $dstname
     echo "backup file name =" $srcname
     echo "-----"
 fi
@@ -142,7 +142,7 @@ fi
 # Debug
 if [ $debugmode -eq 1 ]; then
     echo "-----"
-    echo "distination full path =" ${dstfullpath}
+    echo "destination full path =" ${dstfullpath}
     echo "-----"
 fi
 
