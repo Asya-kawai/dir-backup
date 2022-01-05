@@ -5,13 +5,13 @@ Dir backup creates(copis) source directories to destination directory in recursi
 # Usage
 
 ```
-bash dir-backup.sh source-directory destination-directory
+bash dir_backup.sh source-directory destination-directory
 ```
 
 You can check execution command when use '--dry-run'.
 
 ```
-bash dir-backup.sh source-directory destination-directory --dry-run
+bash dir_backup.sh source-directory destination-directory --dry-run
 ```
 
 # Features
