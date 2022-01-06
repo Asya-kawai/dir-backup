@@ -147,7 +147,7 @@ if [ $debugmode -eq 1 ]; then
 fi
 
 # Create a backup file (format is tar.gz).
-backupcmd="tar --exclude=mnt --exclude=Downloads --exclude=tmp* --exclude=work*  --exclude=timeshift --exclude=.pyenv* --exclude=.npm* --exclude=.opam* --exclude=.rbenv --exclude=.nvm* --exclude=.texlive* --exclude=.thumbnails --exclude=.thunderbird* --exclude=.cache* --exclude=google-cloud-sdk*  --exclude=android-studio* --exclude=.myenv* --exclude=.satysfi* --exclude=sakura --warning=no-file-changed --warning=no-file-removed --warning=no-file-shrank -zvcf ${dstfullpath}/${srcname}-${today}.tar.gz -C ${srcpath} ./${srcname}"
+backupcmd="tar --exclude=mnt --exclude=Downloads --exclude=tmp* --exclude=work* --exclude=timeshift --exclude=.pyenv* --exclude=.npm* --exclude=.opam* --exclude=.rbenv* --exclude=.nvm* --exclude=.texlive* --exclude=.thumbnails --exclude=.thunderbird* --exclude=.cache* --warning=no-file-changed --warning=no-file-removed --warning=no-file-shrank -zvcf ${dstfullpath}/${srcname}-${today}.tar.gz -C ${srcpath} ./${srcname}"
 echo ${backupcmd}
 if [ $debugmode -eq 0 ]; then
     ${backupcmd}
