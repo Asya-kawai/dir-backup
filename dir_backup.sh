@@ -167,11 +167,11 @@ if [ $debugmode -eq 0 ]; then
     check_status $?
 fi
 
-# Delete tar.gz-files which not access 5days.
-rotatecmd="find $dstdir -name ${srcname}'*' -atime +5 -exec rm '{}' \;"
+# Delete tar.gz-files that hasn't changed for more than 5days.
+rotatecmd="find $dstdir -name ${srcname}'*' -ctime +5 -exec rm '{}' \;"
 echo "${rotatecmd}"
 if [ $debugmode -eq 0 ]; then
-    find "$dstdir" -name "${srcname}"'*' -atime +5 -exec rm '{}' \;
+    find "$dstdir" -name "${srcname}"'*' -ctime +5 -exec rm '{}' \;
     check_status $?
 fi
 

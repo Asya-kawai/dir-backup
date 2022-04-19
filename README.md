@@ -21,4 +21,4 @@ bash dir_backup.sh source-directory destination-directory --dry-run
 * Block and return an error when source-directory is '/'.
 * Block and return an error when source-directory or destination-directory is not found.
 * Update 1st day of each month to save and can restore before at least one month.
-* Delete backup files automatically when you did not access in 5days.
+* Automatically, delete backup files that hasn't changed for more than 5days.
