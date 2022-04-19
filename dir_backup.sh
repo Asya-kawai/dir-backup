@@ -160,10 +160,10 @@ if [ $debugmode -eq 0 ]; then
 fi
 
 # Update access time (YYYYMM01 files only).
-rotatecmd="find $dstdir -name ${srcname}'-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]01*.tar.gz' -exec touch '{}' \;"
+rotatecmd="find $dstdir -name ${srcname}'-[0-9][0-9][0-9][0-9][0-9][0-9]01*.tar.gz' -exec touch '{}' \;"
 echo "${rotatecmd}"
 if [ $debugmode -eq 0 ]; then
-    find "$dstdir" -name "${srcname}"'-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]01*.tar.gz' -exec touch '{}' \;
+    find "$dstdir" -name "${srcname}"'-[0-9][0-9][0-9][0-9][0-9][0-9]01*.tar.gz' -exec touch '{}' \;
     check_status $?
 fi
 
