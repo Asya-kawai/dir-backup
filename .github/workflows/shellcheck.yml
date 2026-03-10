@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - 'dir_backup.sh'
+  workflow_dispatch:
 
 jobs:
   shellcheck:
